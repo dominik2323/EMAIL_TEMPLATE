@@ -11,34 +11,37 @@ html(lang="en")
     table.signature
       tbody 
         tr.person
-          td(class="avatar", vertical-align="top")
-            img(src=`/images/${photo}`)
+          td(class="avatar", vertical-align="top", width="100")
+            img(src=`./images/${photo}`)
           td.contact
             h3.red #{name}
+            div(style="font-size: 0.3em;") &nbsp;
             h4.gray300 #{position}
+            div(style="font-size: 1em;") &nbsp;
             div.contact-info
               a(href=`tel: ${phone}`, class="gray400") #{phone} 
               span.red &ensp;|&ensp; 
               a(href=`email: ${email}`, class="gray400") #{email}
               span.red &ensp;|&ensp; 
               a(href="https://labona.cz", class="red bold") www.labona.cz 
-            table
+            table.socials
               tbody  
                 tr
-                  td.socials
+                  td
+                    div(style="font-size: 0.5em;") &nbsp;
                     a(href="https://") 
-                      img(src="/images/fb.svg")
+                      img(src="./images/fb.png")
                     a(href="https://") 
-                      img(src="/images/ig.svg")
+                      img(src="./images/ig.png")
                     a(href="https://") 
-                      img(src="/images/yt.svg")
+                      img(src="./images/yt.png")
         tr
           td(colspan="2")
             hr
         tr.footer
           td.logo
             a(href="https://") 
-              img(src="/images/labona.svg")
+              img(src="./images/labona.png")
           td.eval
             span Jste s Labonou spokojení? 
               a(href="#", class="gray300 underline") Ohodnoťte nás, prosím.
