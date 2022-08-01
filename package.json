@@ -1,0 +1,20 @@
+{
+  "name": "email_template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dominik2323/EMAIL_TEMPLATE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dominik2323/EMAIL_TEMPLATE/issues"
+  },
+  "homepage": "https://github.com/dominik2323/EMAIL_TEMPLATE#readme"
+}

@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    style
+      include style.css
+    title Document
+  body 
+    table.signature
+      tbody 
+        tr.person
+          td(class="avatar", vertical-align="top")
+            img(src=`/images/${photo}`)
+          td.contact
+            h3.red #{name}
+            h4.gray300 #{position}
+            div.contact-info
+              a(href=`tel: ${phone}`, class="gray400") #{phone} 
+              span.red &ensp;|&ensp; 
+              a(href=`email: ${email}`, class="gray400") #{email}
+              span.red &ensp;|&ensp; 
+              a(href="https://labona.cz", class="red bold") www.labona.cz 
+            table
+              tbody  
+                tr
+                  td.socials
+                    a(href="https://") 
+                      img(src="/images/fb.svg")
+                    a(href="https://") 
+                      img(src="/images/ig.svg")
+                    a(href="https://") 
+                      img(src="/images/yt.svg")
+        tr
+          td(colspan="2")
+            hr
+        tr.footer
+          td.logo
+            a(href="https://") 
+              img(src="/images/labona.svg")
+          td.eval
+            span Jste s Labonou spokojení? 
+              a(href="#", class="gray300 underline") Ohodnoťte nás, prosím.
+          
