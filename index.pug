@@ -14,21 +14,25 @@ html(lang="en")
           td(class="avatar", vertical-align="top", width="100")
             img(src=`${api}/images/humans/${photo}`)
           td.contact
-            h3.red #{name}
-            div(style="font-size: 0.3em;") &nbsp;
-            h4.gray300 #{position}
-            div(style="font-size: 1em;") &nbsp;
-            div.contact-info
-              a(href=`tel: ${phone}`, class="gray400") #{phone} 
-              span.red &ensp;|&ensp; 
-              a(href=`email: ${email}`, class="gray400") #{email}
-              span.red &ensp;|&ensp; 
-              a(href="https://labona.cz", class="red bold") www.labona.cz 
+            table
+              tbody 
+                tr
+                  td.name
+                    h3.red #{name}
+                tr
+                  td.position
+                    h4.gray300 #{position}
+                tr
+                  td.contact-info
+                    a(href=`tel: ${phone.split(' ').join('')}`, class="gray400") #{phone} 
+                    span.red &ensp;|&ensp; 
+                    a(href=`email: ${email}`, class="gray400") #{email}
+                    span.red &ensp;|&ensp; 
+                    a(href="https://labona.cz", class="red bold") www.labona.cz 
             table.socials
               tbody  
                 tr
                   td
-                    div(style="font-size: 0.5em;") &nbsp;
                     a(href="https://") 
                       img(src=`${api}/images/fb.png`)
                     a(href="https://") 
@@ -40,8 +44,8 @@ html(lang="en")
             hr
         tr.footer
           td.logo
-            a(href="https://") 
-              img(src="./images/labona.png")
+            a(href="https://labona.cz") 
+              img(src=`${api}/images/labona.png`)
           td.eval
             span Jste s Labonou spokojení? 
               a(href="#", class="gray300 underline") Ohodnoťte nás, prosím.
