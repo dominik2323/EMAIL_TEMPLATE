@@ -12,7 +12,7 @@ html(lang="en")
       tbody 
         tr.person
           td(class="avatar", vertical-align="top", width="100")
-            img(src=`./images/${photo}`)
+            img(src=`${api}/images/humans/${photo}`)
           td.contact
             h3.red #{name}
             div(style="font-size: 0.3em;") &nbsp;
@@ -30,11 +30,11 @@ html(lang="en")
                   td
                     div(style="font-size: 0.5em;") &nbsp;
                     a(href="https://") 
-                      img(src="./images/fb.png")
+                      img(src=`${api}/images/fb.png`)
                     a(href="https://") 
-                      img(src="./images/ig.png")
+                      img(src=`${api}/images/ig.png`)
                     a(href="https://") 
-                      img(src="./images/yt.png")
+                      img(src=`${api}/images/yt.png`)
         tr
           td(colspan="2")
             hr
