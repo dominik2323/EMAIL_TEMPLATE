@@ -1,8 +1,8 @@
 {
   "api": " https://cdn.jsdelivr.net/gh/dominik2323/labona_email_signature@3f5b1df",
-  "name": "Miroslava Krčmářová",
-  "position": "Marketing a PR",
+  "name": "Jméno a příjmení",
+  "position": "pozice",
   "phone": "+420 123 456 789",
-  "email": "krcmarova@labona.cz",
+  "email": "prijmeni@labona.cz",
   "photo": "placeholder.png"
 }
