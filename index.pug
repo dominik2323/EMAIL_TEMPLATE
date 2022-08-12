@@ -12,7 +12,7 @@ html(lang="en")
       tbody 
         tr.person
           td(class="avatar", vertical-align="top", width="100")
-            img(src=`${api}/images/humans/${photo}`)
+            img(src=`${api}/images/humans/${photo}`, width="100", height="100")
           td.contact
             table
               tbody 
@@ -33,19 +33,19 @@ html(lang="en")
               tbody  
                 tr
                   td
-                    a(href="https://") 
-                      img(src=`${api}/images/fb.png`)
-                    a(href="https://") 
-                      img(src=`${api}/images/ig.png`)
-                    a(href="https://") 
-                      img(src=`${api}/images/yt.png`)
+                    a(href="https://www.facebook.com/labonacz") 
+                      img(src=`${api}/images/fb.png`, height="15", width="15")
+                    a(href="https://www.instagram.com/labona_sro/") 
+                      img(src=`${api}/images/ig.png`, height="15", width="19")
+                    a(href="https://www.youtube.com/watch?v=ftKfNdCXcfk&list=PLaUnQL-CIyedgAwv10peWpvlr8wMWaggu") 
+                      img(src=`${api}/images/yt.png`, height="15", width="25")
         tr
           td(colspan="2")
             hr
         tr.footer
           td.logo
             a(href="https://labona.cz") 
-              img(src=`${api}/images/labona.png`)
+              img(src=`${api}/images/labona.png`, width="110", height="25")
           td.eval
             span Jste s Labonou spokojení? 
               a(href="#", class="gray300 underline") Ohodnoťte nás, prosím.
