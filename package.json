@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "pug -w -O data.json index.pug",
     "build": "pug -O data.json index.pug && node inlineCss.js",
-    "generate": "node generateSignatures.js",
+    "generate": "nodemon generateSignatures.js",
     "parse": "node generateJsonFromCsv.js"
   },
   "repository": {
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/dominik2323/EMAIL_TEMPLATE#readme",
   "dependencies": {
     "inline-css": "^4.0.1",
+    "nodemon": "^2.0.19",
     "pug": "^3.0.2",
     "slugify": "^1.6.5"
   }
