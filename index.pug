@@ -16,19 +16,21 @@ html(lang="en")
           td.contact
             table
               tbody 
-                tr
-                  td.name
-                    h3.red #{name}
-                tr
-                  td.position
-                    h4.gray300 #{position}
+                if name 
+                  tr
+                    td.name
+                      h3.red #{name}
+                if position
+                  tr
+                    td.position
+                      h4.gray300 #{position}
                 tr
                   td.contact-info
                     a(href=`tel: ${phone.split(' ').join('')}`, class="gray400") #{phone} 
                     span.red &ensp;|&ensp; 
-                    a(href=`email: ${email}`, class="gray400") #{email}
+                    a(href=`mailto: ${email}`, class="gray400") #{email}
                     span.red &ensp;|&ensp; 
-                    a(href=`${web}`, class="red bold") #{web} 
+                    a(href=`https://${web}`, class="red bold") #{web} 
             table.socials
               tbody  
                 tr

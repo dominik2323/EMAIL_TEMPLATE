@@ -10,10 +10,10 @@ const compiledFunction = pug.compileFile("index.pug");
 data.forEach((person) => {
   const html = compiledFunction({
     api: api,
-    name: `${person.name} ${person.surname}`,
+    name: `${`${person.title} ` || ``}${person.name} ${person.surname}`,
     positon: person.position,
     photo: person.photoFileName,
-    phone: `${person.code} ${person.phone}`,
+    phone: `${person.code || "+420"} ${person.phone}`,
     web: person.web,
     email: person.email,
   });
