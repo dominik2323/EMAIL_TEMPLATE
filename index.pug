@@ -2,8 +2,8 @@ doctype html
 html(lang="en")
   head
     meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
     style
       include style.css
     title Document
@@ -11,8 +11,8 @@ html(lang="en")
     table.signature
       tbody 
         tr.person
-          td(class="avatar", vertical-align="top", width="100")
-            img(src=`${api}/images/humans/${photo}`, width="100", height="100")
+          td(class="avatar" vertical-align="top" width="100")
+            img(src=`${api}/images/humans/${photo}`, width="100" height="100")
           td.contact
             table
               tbody 
@@ -28,25 +28,24 @@ html(lang="en")
                     span.red &ensp;|&ensp; 
                     a(href=`email: ${email}`, class="gray400") #{email}
                     span.red &ensp;|&ensp; 
-                    a(href="https://labona.cz", class="red bold") www.labona.cz 
+                    a(href=`${web}`, class="red bold") #{web} 
             table.socials
               tbody  
                 tr
                   td
                     a(href="https://www.facebook.com/labonacz") 
-                      img(src=`${api}/images/fb.png`, height="15", width="15")
+                      img(src=`${api}/images/fb.png`, height="15" width="15")
                     a(href="https://www.instagram.com/labona_sro/") 
-                      img(src=`${api}/images/ig.png`, height="15", width="19")
+                      img(src=`${api}/images/ig.png`, height="15" width="19")
                     a(href="https://www.youtube.com/watch?v=ftKfNdCXcfk&list=PLaUnQL-CIyedgAwv10peWpvlr8wMWaggu") 
-                      img(src=`${api}/images/yt.png`, height="15", width="25")
+                      img(src=`${api}/images/yt.png`, height="15" width="25")
         tr
           td(colspan="2")
             hr
         tr.footer
           td.logo
             a(href="https://labona.cz") 
-              img(src=`${api}/images/labona.png`, width="110", height="25")
+              img(src=`${api}/images/labona.png`, width="110" height="25")
           td.eval
             span Jste s Labonou spokojení? 
-              a(href="#", class="gray300 underline") Ohodnoťte nás, prosím.
-          
+              a(href="#" class="gray300 underline") Ohodnoťte nás, prosím.

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "pug -w -O data.json index.pug",
     "build": "pug -O data.json index.pug && node inlineCss.js",
-    "generate": "node inlineCss.js"
+    "generate": "node inlineCss.js",
+    "parse": "node generateJsonFromCsv.js"
   },
   "repository": {
     "type": "git",
