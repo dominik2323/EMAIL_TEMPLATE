@@ -4,6 +4,7 @@ const fs = require("fs");
 const data = require("./data_source.json");
 const slugify = require("slugify");
 
+const everythingInsideBody = /<body[^>]*>(.*?)<\/body>/;
 const api =
   "https://cdn.jsdelivr.net/gh/dominik2323/labona_email_signature@latest";
 
@@ -27,28 +28,47 @@ data.forEach((person, i) => {
     name: person.name,
     position: person.position,
     photo: makeSlug(person.photoFileName),
-    phone: `${person.code || "+420"} ${person.phone}`,
+    phone: person.phone ? `${person.code || "+420"} ${person.phone}` : null,
     web: person.web,
     email: person.email,
   });
+  const hasName = person.name && person.surname;
+  const fileName = `${i}_${makeSlug(person.surname || ``)}_${makeSlug(
+    person.name || ``
+  )}_${person.nps}.html`;
+
+  writeHtmlAsFile(html, hasName ? fileName : `${i}_info_${person.nps}.html`);
+
+  // prepare markups for rendering all signatures
+  const currentHtml = html.match(everythingInsideBody)[0];
+  const wrappedHtml = `
+    <div style="margin: 100px 0">
+      ${currentHtml}
+    </div>
+  `;
 
   if (i === 0) {
     markup = html;
-    console.log(html);
   }
-  const currentHtml = html.match(/<body[^>]*>(.*?)<\/body>/)[0];
-  console.log(currentHtml);
-  stackedHtml = stackedHtml + currentHtml;
+  stackedHtml = stackedHtml + wrappedHtml;
 });
 
-let finalMarkup = markup.replace(/<body[^>]*>(.*?)<\/body>/, stackedHtml);
+const prependMsg = (html) => `
+  <h1>Jen pro kontrolu. Nepoužívat pro vytváření podpisů</h1>
+  ${html}
+`;
 
-inlineCss(finalMarkup, { url: `file://${__dirname}/` }).then((html) => {
-  // const fileName = `${i}_${makeSlug(person.surname || ``)}_${makeSlug(
-  //   person.name || ``
-  // )}`;
-  const fileName = `all`;
-  fs.writeFile(`export/${fileName}.html`, html, (err) => {
-    if (err) console.log(err);
+// render all signatures
+const finalMarkup = markup.replace(
+  everythingInsideBody,
+  prependMsg(stackedHtml)
+);
+writeHtmlAsFile(finalMarkup, "!!!_preview.html");
+
+function writeHtmlAsFile(html, fileName) {
+  inlineCss(html, { url: `file://${__dirname}/` }).then((html) => {
+    fs.writeFile(`export/${fileName}`, html, (err) => {
+      if (err) console.log(err);
+    });
   });
-});
+}

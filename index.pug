@@ -27,8 +27,9 @@ html(lang="en")
                       h4.gray300 #{position}
                 tr
                   td.contact-info
-                    a(href=`tel: ${phone.split(' ').join('')}`, class="gray400") #{phone} 
-                    span.red &ensp;|&ensp; 
+                    if phone
+                      a(href=`tel: ${phone.split(' ').join('')}`, class="gray400") #{phone} 
+                      span.red &ensp;|&ensp; 
                     a(href=`mailto: ${email}`, class="gray400") #{email}
                     span.red &ensp;|&ensp; 
                     a(href=`https://${web}`, class="red bold") #{web} 
@@ -61,4 +62,4 @@ html(lang="en")
               img(src=`${api}/images/labona.png`, width="110" height="25")
           td.eval
             span Jste s Labonou spokojení? 
-              a(href="#" class="gray300 underline") Ohodnoťte nás, prosím.
+              a(href="https://surveys.hotjar.com/c25ccdaa-97b5-4009-a475-9e2ee995a0d3" class="gray300 underline") Ohodnoťte nás, prosím.
