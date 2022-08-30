@@ -1,9 +1,5 @@
 const fs = require("fs");
 
-function createPersonData(row) {
-  console.log(splitRowToCols);
-}
-
 fs.readFile("data_source.csv", "utf8", (err, data) => {
   if (err) {
     console.log(err);
@@ -18,7 +14,8 @@ fs.readFile("data_source.csv", "utf8", (err, data) => {
     const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
     const json = header.reduce((acc, curr, i) => {
       const col = cols[i];
-      const normalizedCol = col.length === 0 || col === "-" ? null : col;
+      const normalizedCol =
+        col.length === 0 || col === "-" ? null : col.replace(/['"]+/g, "");
       return {
         ...acc,
         [curr]: normalizedCol,
@@ -26,7 +23,6 @@ fs.readFile("data_source.csv", "utf8", (err, data) => {
     }, []);
     formatedData = [...formatedData, json];
   }
-  const buffer = Buffer.from(formatedData);
 
   fs.writeFile("data_source.json", JSON.stringify(formatedData), (err) => {
     console.log(err);

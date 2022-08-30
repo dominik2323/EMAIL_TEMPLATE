@@ -16,10 +16,10 @@ html(lang="en")
           td.contact
             table
               tbody 
-                if name 
+                if (name && surname) 
                   tr
                     td.name
-                      h3.red #{name}
+                      h3.red #{title} #{name} #{surname}
                 if position
                   tr
                     td.position
