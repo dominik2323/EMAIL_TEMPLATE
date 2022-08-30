@@ -11,7 +11,7 @@ const compiledFunction = pug.compileFile("index.pug");
 
 function makeSlug(str) {
   return slugify(str, {
-    replacement: "_",
+    replacement: "-",
     trim: true,
     lower: true,
   });
@@ -23,8 +23,8 @@ data.forEach((person, i) => {
     title: person.title,
     surname: person.surname,
     name: person.name,
-    positon: person.position,
-    photo: person.photoFileName,
+    position: person.position,
+    photo: makeSlug(person.photoFileName),
     phone: `${person.code || "+420"} ${person.phone}`,
     web: person.web,
     email: person.email,

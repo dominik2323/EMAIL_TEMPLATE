@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "pug -w -O data.json index.pug",
     "build": "pug -O data.json index.pug && node inlineCss.js",
-    "generate": "nodemon generateSignatures.js",
+    "generate": "nodemon generateSignatures.js nodemon -e js,pug,css",
     "parse": "node generateJsonFromCsv.js"
   },
   "repository": {
@@ -24,6 +24,7 @@
     "inline-css": "^4.0.1",
     "nodemon": "^2.0.19",
     "pug": "^3.0.2",
-    "slugify": "^1.6.5"
+    "slugify": "^1.6.5",
+    "slugify-files": "^2.1.0"
   }
 }

@@ -8,7 +8,7 @@ html(lang="en")
       include style.css
     title Document
   body 
-    table.signature
+    table(class="signature" cellspacing="0" border="0")
       tbody 
         tr.person
           td(class="avatar" vertical-align="top" width="100")
@@ -20,9 +20,7 @@ html(lang="en")
                   tr
                     td.name
                       h3.red #{title} #{name} #{surname}
-                  tr
-                    td
-                      img(src=`${api}/images/spaces/xs.png`, width="5" height="5")
+                      img(src=`${api}/images/spaces/xs.png`, width="5" height="5" class="space")
                 if position
                   tr
                     td.position
@@ -37,19 +35,29 @@ html(lang="en")
             table.socials
               tbody  
                 tr
+                  td(colspan="3")
+                    img(src=`${api}/images/spaces/s.png`, width="10" height="10" class="space")
+                tr
                   td
-                    a(href="https://www.facebook.com/labonacz") 
-                      img(src=`${api}/images/fb.png`, height="15" width="15")
-                    a(href="https://www.instagram.com/labona_sro/") 
-                      img(src=`${api}/images/ig.png`, height="15" width="19")
-                    a(href="https://www.youtube.com/watch?v=ftKfNdCXcfk&list=PLaUnQL-CIyedgAwv10peWpvlr8wMWaggu") 
-                      img(src=`${api}/images/yt.png`, height="15" width="25")
+                    div
+                      a(href="https://www.facebook.com/labonacz") 
+                        img(src=`${api}/images/fb.png`, height="15" width="15" class="social-icon fb")
+                  td
+                    div
+                      a(href="https://www.instagram.com/labona_sro/") 
+                        img(src=`${api}/images/ig.png`, height="15" width="20" class="social-icon ig")
+                  td
+                    div
+                      a(href="https://www.youtube.com/watch?v=ftKfNdCXcfk&list=PLaUnQL-CIyedgAwv10peWpvlr8wMWaggu") 
+                        img(src=`${api}/images/yt.png`, height="15" width="25" class="social-icon yt")
         tr
           td(colspan="2")
+            img(src=`${api}/images/spaces/s.png`, width="10" height="10" class="space")
             hr
+            img(src=`${api}/images/spaces/s.png`, width="10" height="10" class="space")
         tr.footer
           td.logo
-            a(href="https://labona.cz") 
+            a(href=`https://${web}`) 
               img(src=`${api}/images/labona.png`, width="110" height="25")
           td.eval
             span Jste s Labonou spokojení? 
