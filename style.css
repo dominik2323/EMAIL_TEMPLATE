@@ -21,6 +21,9 @@ span {
 .avatar {
   vertical-align: top;
 }
+.divider {
+  width: 100%;
+}
 .avatar img {
   width: 100px;
   object-fit: cover;
@@ -87,6 +90,10 @@ hr {
   display: block;
 }
 
+.l {
+  width: 20px;
+  height: 20px;
+}
 .s {
   width: 10px;
   height: 10px;

@@ -20,9 +20,6 @@ html(lang="en")
                   tr
                     td.name
                       h3.red #{title} #{name} #{surname}
-                  tr
-                    td
-                      img(src=`${api}/images/spaces/xs.png`, width="5" height="5" class="space xs")
                 if position
                   tr
                     td.position
@@ -39,7 +36,7 @@ html(lang="en")
               tbody  
                 tr
                   td(colspan="3")
-                    img(src=`${api}/images/spaces/s.png`, width="10" height="10" class="space s")
+                    img(src=`${api}/images/spaces/s.png`, width="10" height="10" class="space s") 
                 tr
                   td
                     div
@@ -57,15 +54,20 @@ html(lang="en")
           td(colspan="2")
             img(src=`${api}/images/spaces/s.png`, width="10" height="10" class="space s")
         tr
-          td(colspan="2")
-            img(src=`${api}/images/divider.png`, width="450" height="1")
+          td(colspan="2" style="border-top: 1px solid #E7E7E8;" )
+            span 
         tr 
           td(colspan="2")
             img(src=`${api}/images/spaces/s.png`, width="10" height="10" class="space s")
         tr.footer
           td.logo
-            a(href=`https://${web}`) 
-              img(src=`${api}/images/labona-reg.png`, width="120" height="25")
+            table
+              tr
+                td
+                  a(href=`https://${web}`) 
+                    img(src=`${api}/images/labona-reg.png`, width="120" height="25")
+                td
+                  img(src=`${api}/images/spaces/l.png`, width="20" height="20" class="space l")
           td.eval
             span Jste s Labonou spokojení? 
               a(href="https://surveys.hotjar.com/c25ccdaa-97b5-4009-a475-9e2ee995a0d3" class="gray300 underline") Ohodnoťte nás, prosím.
