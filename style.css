@@ -82,3 +82,12 @@ hr {
 .space {
   display: block;
 }
+
+.s {
+  width: 10px;
+  height: 10px;
+}
+.xs {
+  width: 5px;
+  height: 5px;
+}
