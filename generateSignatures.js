@@ -27,7 +27,7 @@ data.forEach((person, i) => {
     surname: person.surname,
     name: person.name,
     position: person.position,
-    photo: makeSlug(person.photoFileName),
+    photo: makeSlug(person.photoFileName.split(".")[0] + `.png`),
     phone: person.phone ? `${person.code || "+420"} ${person.phone}` : null,
     web: person.web,
     email: person.email,
