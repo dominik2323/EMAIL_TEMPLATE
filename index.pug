@@ -82,10 +82,14 @@ html(lang="en")
         tr(style="height:20px")
           td(colspan="2")
         tr(style="height:30px")
-          td.logo
-            p
-              a(href=`https://${web}`) 
-                img(src=`${api}/images/labona-reg.png`, width="120" height="25")
+          td
+            table
+              tr
+                td(class="logo")
+                  p
+                    a(href=`https://${web}`) 
+                      img(src=`${api}/images/labona-reg.png`, width="120" height="25")
+                td(width="20" style="width:20px")
           td(class="eval" style="vertical-align:middle")
             p
               | #{nps_claim[0] + "?"}
