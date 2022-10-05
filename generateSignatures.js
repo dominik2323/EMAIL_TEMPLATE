@@ -28,9 +28,16 @@ data.forEach((person, i) => {
     name: person.name,
     position: person.position,
     photo: makeSlug(person.photoFileName.split(".")[0] + `.png`),
-    phone: person.phone ? `${person.code || "+420"} ${person.phone}` : null,
+    phone: person.phone
+      ? `+${person.phoneCode || "420"} ${person.phone}`
+      : null,
     web: person.web,
     email: person.email,
+    facebook: person.facebook,
+    instagram: person.instagram,
+    youtube: person.youtube,
+    nps_claim: person.nps_claim.split(`? `),
+    nps_link: person.nps_link,
   });
   const hasName = person.name && person.surname;
   const fileName = `${i}_${makeSlug(person.surname || ``)}_${makeSlug(

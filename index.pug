@@ -8,66 +8,86 @@ html(lang="en")
       include style.css
     title Document
   body 
-    table(class="signature" cellspacing="0" border="0")
+    table(class="signature" cellspacing="0" border="0" cellpadding="0")
       tbody 
-        tr.person
-          td(class="avatar" vertical-align="top" width="100")
+        tr(style="height: 100px;")
+          td(class="avatar" vertical-align="top" width="100" colspan="2")
             img(src=`${api}/images/humans/png/${photo}`, width="100" height="100")
-          td.contact
-            table
-              tbody 
-                if (name && surname) 
-                  tr
-                    td.name
-                      h3.red #{title} #{name} #{surname}
-                if position
-                  tr
-                    td.position
-                      h4.gray300 #{position}
-                tr
-                  td.contact-info
-                    if phone
-                      a(href=`tel: ${phone.split(' ').join('')}`, class="gray400") #{phone} 
-                      span.red &ensp;|&ensp; 
-                    a(href=`mailto: ${email}`, class="gray400") #{email}
-                    span.red &ensp;|&ensp; 
-                    a(href=`https://${web}`, class="red bold") #{web} 
-            table.socials
-              tbody  
-                tr
-                  td(colspan="3")
-                    img(src=`${api}/images/spaces/s.png`, width="10" height="10" class="space s") 
-                tr
-                  td
-                    div
-                      a(href="https://www.facebook.com/labonacz") 
-                        img(src=`${api}/images/fb.png`, height="15" width="15" class="social-icon fb")
-                  td
-                    div
-                      a(href="https://www.instagram.com/labona_sro/") 
-                        img(src=`${api}/images/ig.png`, height="15" width="20" class="social-icon ig")
-                  td
-                    div
-                      a(href="https://www.youtube.com/watch?v=ftKfNdCXcfk&list=PLaUnQL-CIyedgAwv10peWpvlr8wMWaggu") 
-                        img(src=`${api}/images/yt.png`, height="15" width="25" class="social-icon yt")
-        tr
+        tr(style="height:10px;")
           td(colspan="2")
-            img(src=`${api}/images/spaces/s.png`, width="10" height="10" class="space s")
-        tr
-          td(colspan="2" style="border-top: 1px solid #E7E7E8;" )
-            span 
-        tr 
-          td(colspan="2")
-            img(src=`${api}/images/spaces/s.png`, width="10" height="10" class="space s")
-        tr.footer
-          td.logo
-            table
+        tr(class="person")
+          td(class="contact" colspan="2")
+            table(cellspacing="0" border="0" cellpadding="0")
               tr
                 td
-                  a(href=`https://${web}`) 
-                    img(src=`${api}/images/labona-reg.png`, width="120" height="25")
+                  div
+                    table(cellspacing="0" border="0" cellpadding="0")
+                      tbody 
+                        if (name && surname) 
+                          tr
+                            td.name
+                              p(class="red h3") #{title} #{name} #{surname}
+                          tr(style="height:5px;")
+                            td
+                        if position
+                          tr
+                            td.position
+                              p(class="gray300 h4") #{position}
+                          tr(style="height:5px")
+                            td
+                        tr
+                          td
+                            div
+                              table(cellspacing="0" border="0" cellpadding="0")
+                                tr
+                                  if phone
+                                    td
+                                      p
+                                        a(href=`tel: ${phone.split(' ').join('')}`, class="gray400") #{phone} 
+                                  td(width="20" style="width:20px" align="center")
+                                    p.red |
+                                  td
+                                    p
+                                      a(href=`mailto: ${email}`, class="gray400") #{email}
+                                  td(width="20" style="width:20px" align="center")
+                                    p.red |
+                                  td
+                                    p
+                                      a(href=`https://${web}`, class="red bold") #{web} 
+              tr
                 td
-                  img(src=`${api}/images/spaces/l.png`, width="20" height="20" class="space l")
-          td.eval
-            span Jste s Labonou spokojení? 
-              a(href="https://surveys.hotjar.com/c25ccdaa-97b5-4009-a475-9e2ee995a0d3" class="gray300 underline") Ohodnoťte nás, prosím.
+                  p
+                    table(class="socials" cellspacing="0" border="0" cellpadding="0")
+                      tbody  
+                        tr(style="height:10px")
+                          td(colspan="3")
+                        tr
+                          td
+                            p
+                              a(href=facebook) 
+                                img(src=`${api}/images/fb.png`, height="15" width="15" class="social-icon fb")
+                          td
+                            p
+                              a(href=instagram) 
+                                img(src=`${api}/images/ig.png`, height="15" width="20" class="social-icon ig")
+                          td
+                            p
+                              a(href=youtube) 
+                                img(src=`${api}/images/yt.png`, height="15" width="25" class="social-icon yt")
+        tr(style="height:20px")
+          td(colspan="2")
+        tr
+          td(colspan="2" style="border-top: 1px solid #E7E7E8;" )
+            p 
+        tr(style="height:20px")
+          td(colspan="2")
+        tr(style="height:30px")
+          td.logo
+            p
+              a(href=`https://${web}`) 
+                img(src=`${api}/images/labona-reg.png`, width="120" height="25")
+          td(class="eval" style="vertical-align:middle")
+            p
+              | #{nps_claim[0] + "?"}
+              br
+              a(href=nps_link class="gray300 underline") #{nps_claim[1]}
